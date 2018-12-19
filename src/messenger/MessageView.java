@@ -101,7 +101,7 @@ public class MessageView extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 String enterMsg = jTextArea1.getText().toString();
         try {
-            InetAddress adr = InetAddress.getByName("192.168.1.61");
+            InetAddress adr = InetAddress.getByName("10.32.2.156");
             msg.Send(adr, enterMsg, "Lui", "Moi");
         } catch (UnknownHostException ex) {
             Logger.getLogger(MessageView.class.getName()).log(Level.SEVERE, null, ex);

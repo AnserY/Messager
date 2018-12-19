@@ -10,10 +10,10 @@ public class TCPServer implements Runnable {
 	
 	ServerSocket sockserv;
 	ArrayList<Socket> listSock;
-
+// constructeur
 	public TCPServer() {
 		try {
-			this.sockserv = new ServerSocket(8045);
+			this.sockserv = new ServerSocket(8043);
 		} catch (IOException e) {
 			System.err.println("ServerSocket couldn't be created");
 			e.printStackTrace();

@@ -25,14 +25,14 @@ public class TCPClient implements Runnable {
 	public void run() {
 		try {
 			this.sock.connect(new InetSocketAddress(this.ipToSend, 8045));
-			int count;
+			int count; 
 			byte[] buffer = new byte[1024];
 
 			OutputStream out = sock.getOutputStream();
 			BufferedInputStream in = new BufferedInputStream(new FileInputStream(new File(this.fileName)));
-			while ((count = in.read(buffer)) >= 0) {
+			while ((count = in.read(buffer)) >= 0) { // si count -1 
 			     out.write(buffer, 0, count);
-			     out.flush();
+			     out.flush();   //force l'ecriture
 			}
 			in.close();
 			this.sock.close();

@@ -3,10 +3,26 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/anser/NetBeansProjects/Messenger/src/model/MsgTxt.java</file>
-            <file>file:/home/anser/NetBeansProjects/Messenger/src/model/MsgHello.java</file>
-            <file>file:/home/anser/NetBeansProjects/Messenger/src/Network2/main.java</file>
-            <file>file:/home/anser/NetBeansProjects/Messenger/src/network/UDPSender.java</file>
+            <file>file:/Users/franck/Desktop/Messager/src/messenger/Messenger.java</file>
+            <file>file:/Users/franck/Desktop/Messager/src/Network2/TCPClient.java</file>
+            <file>file:/Users/franck/Desktop/Messager/src/model/Message.java</file>
+            <file>file:/Users/franck/Desktop/Messager/src/model/MsgGoodbye.java</file>
+            <file>file:/Users/franck/Desktop/Messager/src/model/MsgHello.java</file>
+            <file>file:/Users/franck/Desktop/Messager/src/Network2/main2.java</file>
+            <file>file:/Users/franck/Desktop/Messager/src/network/UDPReceiver.java</file>
+            <file>file:/Users/franck/Desktop/Messager/src/Network2/TCPReceiver.java</file>
+            <file>file:/Users/franck/Desktop/Messager/src/network/TCPServer.java</file>
+            <file>file:/Users/franck/Desktop/Messager/src/model/MsgExt.java</file>
+            <file>file:/Users/franck/Desktop/Messager/src/model/MsgTxt.java</file>
+            <file>file:/Users/franck/Desktop/Messager/src/network/TCPClient.java</file>
+            <file>file:/Users/franck/Desktop/Messager/src/Network2/main.java</file>
+            <file>file:/Users/franck/Desktop/Messager/src/network/UDPSender.java</file>
+            <file>file:/Users/franck/Desktop/Messager/src/messenger/MessageView.java</file>
+            <file>file:/Users/franck/Desktop/Messager/src/network/TCPReceiver.java</file>
+            <file>file:/Users/franck/Desktop/Messager/src/Network2/test.txt</file>
+            <file>file:/Users/franck/Desktop/Messager/src/model/MsgCheck.java</file>
+            <file>file:/Users/franck/Desktop/Messager/src/model/MsgFile.java</file>
+            <file>file:/Users/franck/Desktop/Messager/src/Network2/TCPServer.java</file>
         </group>
     </open-files>
 </project-private>
