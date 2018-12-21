@@ -6,6 +6,7 @@
 package messenger;
 
 import Network2.*;
+import java.net.InetAddress;
 
 /**
  *
@@ -13,11 +14,12 @@ import Network2.*;
  */
 public class Messenger2 {
     
-     private TCPClient Ctcp;
-     private TCPServer Stcp;
-     private TCPReceiver Rtcp;
+     public TCPClient Ctcp;
+  
      
-    public Messenger2(){
+    public Messenger2(InetAddress adr){
+        
+        Ctcp = new TCPClient(adr);
         
     }
     

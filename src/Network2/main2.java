@@ -28,22 +28,8 @@ public class main2 {
           
         Thread t1 =new Thread(tcp_serv);
         t1.start();
-        //main2.sleep(5000);
-        // A faire : On attend que le client se connecte avec notify all 
-        TimeUnit.SECONDS.sleep(7);
         
-       
-        Socket sock = tcp_serv.listSock.get(adr);
-       
-        System.out.println(sock);
-        
-       //String file = "/Users/franck/Desktop/Messager/src/Network2/test.txt" ; // Récupération des conversations
-       
-  
-       
-        TCPReceiver tcp_recv = new TCPReceiver(sock);
-        Thread t2 = new Thread(tcp_recv);
-        t2.start();
+      
     }
     
 }

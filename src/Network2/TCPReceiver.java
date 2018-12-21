@@ -30,6 +30,7 @@ public class TCPReceiver implements Runnable{
                 
                 objectInput = new ObjectInputStream(sock.getInputStream());
                 Object object =(Message) objectInput.readObject();
+                
                 System.out.println(object);
                 
 		
