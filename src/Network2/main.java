@@ -23,10 +23,10 @@ public class main {
     
      public static void main(String args[]) throws UnknownHostException, SocketException{
         
-         /* InetAddress adr = InetAddress.getByName("192.168.1.61");
+          InetAddress adr = InetAddress.getByName("10.32.3.55");
           TCPClient Ctcp = new TCPClient(adr);
           MsgTxt mes = new MsgTxt("oui","moi","lui"); 
-          Ctcp.sendMessage(mes);*/
+          Ctcp.sendMessage(mes);
          
      /*    Enumeration<NetworkInterface> i = NetworkInterface.getNetworkInterfaces();
        

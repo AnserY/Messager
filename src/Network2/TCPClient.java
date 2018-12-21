@@ -25,7 +25,7 @@ public class TCPClient   {
 
         public void sendMessage (Message mes) {
 		try {
-			this.sock.connect(new InetSocketAddress(this.ipToSend, 8045));
+			this.sock.connect(new InetSocketAddress(this.ipToSend, 8043));
 			byte[] buffer = new byte[1024];
 			ObjectOutputStream outToServeur = new ObjectOutputStream(sock.getOutputStream());
                         outToServeur.writeObject(mes);

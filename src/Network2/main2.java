@@ -8,6 +8,7 @@ package Network2;
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.InetAddress;
 import java.net.Socket;
 import java.util.concurrent.TimeUnit;
 
@@ -15,15 +16,16 @@ import java.util.concurrent.TimeUnit;
  *
  * @author franck
  */
-public class main2 extends Thread{
+public class main2 {
     // Ecoute des demandes de chat
     public static void main( String args[]) throws IOException, InterruptedException{
+        
+        InetAddress adr = InetAddress.getByName("10.32.3.55");
         
         
         System.out.println("ok");
         TCPServer tcp_serv = new TCPServer();
-       
-        
+          
         Thread t1 =new Thread(tcp_serv);
         t1.start();
         //main2.sleep(5000);
@@ -31,13 +33,14 @@ public class main2 extends Thread{
         TimeUnit.SECONDS.sleep(7);
         
        
-        Socket sock = tcp_serv.listSock.get(0);
+        Socket sock = tcp_serv.listSock.get(adr);
        
-        String file = "/Users/franck/Desktop/Messager/src/Network2/test.txt" ; // Récupération des conversations
-        InputStream in;
-  
-        in = new DataInputStream(tcp_serv.listSock.get(0).getInputStream());
+        System.out.println(sock);
         
+       //String file = "/Users/franck/Desktop/Messager/src/Network2/test.txt" ; // Récupération des conversations
+       
+  
+       
         TCPReceiver tcp_recv = new TCPReceiver(sock);
         Thread t2 = new Thread(tcp_recv);
         t2.start();
