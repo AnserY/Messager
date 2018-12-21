@@ -22,28 +22,7 @@ public class UDPReceiver implements Runnable {
 	private Message[] messagewithip;
         
 	
-  /*  private final EventListenerList listeners = new EventListenerList();
-
-    public void addNewMessageListener(NewMessageListener listener) {
-        this.listeners.add(NewMessageListener.class, listener);
-        }
-
-    public void removeNewMessageListener(NewMessageListener listener) {
-        this.listeners.remove(NewMessageListener.class, listener);
-        }
-
-    public NewMessageListener[] getNewMessageListeners() {
-        return listeners.getListeners(NewMessageListener.class);
-        }
-
-    protected void newMessageReceived(InetAddress address) {
-		for(NewMessageListener listener : getNewMessageListeners()) {
-            listener.aMessageHasBeenReceived(address);
-        }
-	}*/
-
-        
-	public UDPReceiver() {
+        public UDPReceiver() {
 		try {
 			this.socket = new DatagramSocket(1234);
 		} catch (SocketException e) {

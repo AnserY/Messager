@@ -1,16 +1,20 @@
 package Network2;
 
 import java.io.IOException;
+import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.Dictionary;
+import java.util.Hashtable;
 
 
 public class TCPServer implements Runnable {
 	
 	ServerSocket sockserv;
-	ArrayList<Socket> listSock;
-// constructeur
+	Dictionary<InetAddress,Socket> listSock ;
+        
+        // constructeur
 	public TCPServer() {
 		try {
 			this.sockserv = new ServerSocket(8043);
@@ -18,7 +22,7 @@ public class TCPServer implements Runnable {
 			System.err.println("ServerSocket couldn't be created");
 			e.printStackTrace();
 		}
-		this.listSock = new ArrayList<Socket>();
+		this.listSock = new Hashtable<InetAddress,Socket>();
 		
 	}
 
@@ -26,7 +30,8 @@ public class TCPServer implements Runnable {
 	public void run() {
 		while(true){
 			try {
-				this.listSock.add(this.sockserv.accept());
+                                Socket sock = this.sockserv.accept();
+				this.listSock.put(sock.getInetAddress(),sock);
 			} catch (IOException e) {
 				System.err.println("Client socket couldn't be created");
 				e.printStackTrace();

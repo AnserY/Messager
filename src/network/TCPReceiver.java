@@ -1,46 +1,44 @@
 package network;
 
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
 import java.net.Socket;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import model.Message;
 
 public class TCPReceiver implements Runnable{
 	
 	private Socket sock;
-	private DataInputStream fluxentrant;
-	private File fichier;
-	private FileWriter fw;
+       
 	
-	public TCPReceiver(Socket sock, DataInputStream flux, String fileName){
+	public TCPReceiver(Socket sock){
 		this.sock = sock;	
-		this.fluxentrant = flux;
-		this.fichier = new File(fileName);
-		try {
-			this.fw = new FileWriter(this.fichier);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 	}
 
 	@Override
 	public void run() {
-		try {
-			this.fw.write(this.fluxentrant.readUTF());
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		try {
-			this.fw.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		try {
-			this.sock.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+            
+                ObjectInputStream objectInput;
+            try {
+                
+                objectInput = new ObjectInputStream(sock.getInputStream());
+                Object object =(Message) objectInput.readObject();
+                System.out.println(object);
+                
+		
+            } catch (IOException ex) {
+                Logger.getLogger(TCPReceiver.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(TCPReceiver.class.getName()).log(Level.SEVERE, null, ex);
+            }
+               	 
 	}
 	
 	

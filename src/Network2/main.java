@@ -5,9 +5,14 @@
  */
 package Network2;
 
+import java.net.Inet4Address;
 import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
 import java.net.UnknownHostException;
+import java.util.Enumeration;
 
+import model.*;
 /**
  *
  * @author anser
@@ -16,17 +21,29 @@ public class main {
     // On simule le lancement d'un client
     
     
-     public static void main(String args[]) throws UnknownHostException{
+     public static void main(String args[]) throws UnknownHostException, SocketException{
         
-          InetAddress adr = InetAddress.getByName("127.0.0.1");
+         /* InetAddress adr = InetAddress.getByName("192.168.1.61");
+          TCPClient Ctcp = new TCPClient(adr);
+          MsgTxt mes = new MsgTxt("oui","moi","lui"); 
+          Ctcp.sendMessage(mes);*/
          
-         TCPClient Ctcp = new TCPClient("/home/anser/NetBeansProjects/Messenger/src/Network2/test.txt",adr);
-         Thread T1 = new Thread(Ctcp); // Run l'objet invoqué
-         T1.start();
-    }
+     /*    Enumeration<NetworkInterface> i = NetworkInterface.getNetworkInterfaces();
+       
+        while(i.hasMoreElements())
+{
+    NetworkInterface n = (NetworkInterface) i.nextElement();
+    Enumeration ee = n.getInetAddresses();
+    while (ee.hasMoreElements())
+    {
+        InetAddress k = (InetAddress) ee.nextElement();
+        System.out.println(k.getHostAddress());
+    }*/
+        }
 
-    static void sleep(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+
 }
+
+
+    
+
